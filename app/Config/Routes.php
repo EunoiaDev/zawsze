@@ -23,6 +23,9 @@ $routes->post('/aktiva', 'Aktiva::store');
 $routes->put('/aktiva/edit/(:any)', 'Aktiva::update/$1');
 $routes->delete('/aktiva/(:any)', 'Aktiva::destroy/$1');
 
+$routes->get('/transaksi', 'Transaksi::index');
+$routes->resource('transaksi');
+
 // Additional Routing
 // There will often be times that you need additional routing and you need it to be able to override any defaults in this file. Environment based routes is one such time. require() additional route files here to make that happen.
 // You will have access to the $routes object within that file without needing to reload it.
