@@ -67,7 +67,7 @@
                                         <form action="<?= site_url('transaksi/' . $value->id_transaksi) ?>" method="post" id="del-<?= $value->id_transaksi ?>" class="d-inline ">
                                             <?= csrf_field(); ?>
                                             <input type="hidden" name="_method" value="DELETE">
-                                            <button class="btn btn-danger btn-sm" style="width: 75px; height: 35px; display: inline-flex; align-items: center; justify-content: center;" data-confirm="Hapus Data...? | Apakah Anda Yakin...?" data-confirm-yes="hapus(<?= $value->id_akun ?>)"><i class="fas fa-trash"></i>Delete</button>
+                                            <button class="btn btn-danger btn-sm" style="width: 75px; height: 35px; display: inline-flex; align-items: center; justify-content: center;" data-confirm="Hapus Data...? | Apakah Anda Yakin...?" data-confirm-yes="hapus(<?= $value->id_transaksi ?>)"><i class="fas fa-trash"></i>Delete</button>
 
                                         </form>
                                     </td>
