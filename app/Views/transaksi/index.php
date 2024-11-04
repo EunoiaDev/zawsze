@@ -8,12 +8,12 @@
 <section class="section">
     <div class="section-header">
         <!-- <h1>Selamat Datang, Reza!</h1> -->
-        <a href="<?= site_url('transaksi/new') ?>" class="btn btn-primary">Tambah Akun</a>
+        <a href="<?= site_url('transaksi/new') ?>" class="btn btn-primary">Add New</a>
     </div>
 
     <?php if (session()->getFlashdata('success')) : ?>
         <div class="alert alert-success alert-dismissible show fade">
-            <div class="alert-body">
+            <div class="alser-body">
                 <button class="close" data-dismiss="alert"> x </button>
                 <?= session()->getFlashdata('success'); ?>
             </div>
@@ -37,7 +37,7 @@
             </div>
             <div class="card-body p-4">
                 <div class="table-responsive">
-                    <table class="table table-striped table-md">
+                    <table class="table table-striped table-md" id="myTable">
                         <thead>
                             <tr>
                                 <th>No</th>
@@ -55,7 +55,7 @@
                                     <td><?= $value->tanggal ?></td>
                                     <td><?= $value->deskripsi ?></td>
                                     <td><?= $value->ketjurnal ?></td>
-                                    <td class="text-center" style="width: 21%;">
+                                    <td class=" text-center" style="width: 21%;">
                                         <!-- <a href="" class="btn btn-warning"><i class="fas fa-pencil-alt"></i> Edit</a>
                                         <a href="" class="btn btn-danger"><i class="fas fa-trash-alt"></i>Hapus</a> -->
                                         <a href="<?= site_url('transaksi/' . $value->id_transaksi) . '/edit' ?> " class="btn btn-warning" style="width: 75px; height: 35px; display: inline-flex; align-items: center; justify-content: center;">

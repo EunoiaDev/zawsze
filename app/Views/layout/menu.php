@@ -9,7 +9,7 @@
 <li class="nav-item dropdown">
     <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-file-invoice"></i> <span>Transaksi</span></a>
     <ul class="dropdown-menu">
-        <li><a class="nav-link" href="#">Transaksi Jurnal</a></li>
+        <li><a class="nav-link" href="<?= site_url('transaksi') ?>">Transaksi Jurnal</a></li>
         <li><a class="nav-link" href="#">Transaksi Penyesuaian</a></li>
     </ul>
 </li>

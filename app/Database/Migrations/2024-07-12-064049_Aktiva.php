@@ -33,11 +33,13 @@ class Aktiva extends Migration
             ],
             'saldo_awal_debet' => [
                 'type'       => 'DECIMAL',
-                'constraint' => 15, 2,
+                'constraint' => 15,
+                2,
             ],
             'saldo_awal_kredit' => [
                 'type'       => 'DECIMAL',
-                'constraint' => 15, 2,
+                'constraint' => 15,
+                2,
             ],
             'grup_arus_kas' => [
                 'type'       => 'VARCHAR',
