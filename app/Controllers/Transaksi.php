@@ -2,11 +2,17 @@
 
 namespace App\Controllers;
 
+use App\Models\ModelTransaksi;
 use CodeIgniter\HTTP\ResponseInterface;
 use CodeIgniter\RESTful\ResourceController;
 
 class Transaksi extends ResourceController
 {
+    function __construct()
+    {
+        $this->db = \config\Database::connect();
+        $this->objTransaksi = new ModelTransaksi();
+    }
     /**
      * Return an array of resource objects, themselves in array format.
      *
