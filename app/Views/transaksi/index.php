@@ -13,7 +13,7 @@
 
     <?php if (session()->getFlashdata('success')) : ?>
         <div class="alert alert-success alert-dismissible show fade">
-            <div class="alser-body">
+            <div class="alert-body">
                 <button class="close" data-dismiss="alert"> x </button>
                 <?= session()->getFlashdata('success'); ?>
             </div>
@@ -41,8 +41,10 @@
                         <thead>
                             <tr>
                                 <th>No</th>
-                                <th>Kode Akun</th>
-                                <th>Nama Akun</th>
+                                <th>Kwitansi</th>
+                                <th>Tanggal</th>
+                                <th>Deskripsi</th>
+                                <th>Keterangan Jurnal</th>
                                 <th>Aksi</th>
                             </tr>
                         </thead>
@@ -80,5 +82,6 @@
 
         </div>
     </div>
+
 </section>
 <?= $this->endSection(); ?>

@@ -24,6 +24,7 @@ $routes->put('/aktiva/edit/(:any)', 'Aktiva::update/$1');
 $routes->delete('/aktiva/(:any)', 'Aktiva::destroy/$1');
 
 $routes->get('/transaksi', 'Transaksi::index');
+$routes->post('/transaksi', 'Transaksi::create');
 $routes->resource('transaksi');
 
 // Additional Routing

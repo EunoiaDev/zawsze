@@ -46,7 +46,7 @@ class Transaksi extends ResourceController
      */
     public function new()
     {
-        //
+        return view('transaksi/new');
     }
 
     /**
@@ -56,7 +56,15 @@ class Transaksi extends ResourceController
      */
     public function create()
     {
-        //
+        $data1 = [
+            //ini untuk data tbl_transaksi    
+            'kwitansi' => $this->request->getVar('kwitansi'),
+            'tanggal' => $this->request->getVar('tanggal'),
+            'deskripsi' => $this->request->getVar('deskripsi'),
+            'ketjurnal' => $this->request->getVar('ketjurnal'),
+        ];
+        $this->db->table('tbl_transaksi')->insert($data1);
+        return redirect()->to(site_url('transaksi'))->with('Success', 'Data Berhasil Disimpan');
     }
 
     /**

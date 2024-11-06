@@ -20,6 +20,7 @@ $('ul.sidebar-menu li a').each(function(){
     }
 });
 
+// pagination
 $(document).ready(function(){
     $('#myTable').DataTable();
 });

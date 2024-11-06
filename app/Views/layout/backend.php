@@ -285,8 +285,8 @@
     <!-- General JS Scripts -->
     <script src="<?= base_url() ?>/template/node_modules/jquery/dist/jquery.min.js"></script>
     <script src="<?= base_url() ?>/template/node_modules/datatables/media/js/jquery.dataTables.min.js"></script>
-    <script src="<?= base_url() ?>/template/node_modules/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
     <script src="<?= base_url() ?>/template/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="<?= base_url() ?>/template/node_modules/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
     <script src="<?= base_url() ?>/template/node_modules/nicescroll/dist/jquery.nicescroll.min.js"></script>
     <script src="<?= base_url() ?>/template/assets/js/stisla.js"></script>
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script> -->
@@ -294,8 +294,8 @@
     <!-- JS Libraies -->
 
     <!-- Template JS File -->
-    <script src="<?= base_url() ?>/template/assets/js/scripts.js"></script>
     <script src="<?= base_url() ?>/template/assets/js/custom.js"></script>
+    <script src="<?= base_url() ?>/template/assets/js/scripts.js"></script>
 
     <!-- Page Specific JS File -->
 </body>
