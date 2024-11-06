@@ -19,3 +19,7 @@ $('ul.sidebar-menu li a').each(function(){
         $(this).parent().addClass('active').parent().parent('li').addClass('active')
     }
 });
+
+$(document).ready(function(){
+    $('#myTable').DataTable();
+});
