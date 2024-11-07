@@ -15,7 +15,7 @@ class CreateTransaksi extends Migration
                 'unsigned'       => true,
                 'auto_increment' => true,
             ],
-            'kwitansi' => [
+            'no_bundle' => [
                 'type'       => 'VARCHAR',
                 'constraint' => 4,
             ],
@@ -27,10 +27,21 @@ class CreateTransaksi extends Migration
                 'type'       => 'TEXT',
 
             ],
-            'ketjurnal' => [
+            'debit' => [
+                'type'       => 'FLOAT',
+                'constraint' => 12,
+
+            ],
+            'kredit' => [
+                'type'       => 'FLOAT',
+                'constraint' => 12,
+
+            ],
+            'PIC' => [
                 'type'       => 'VARCHAR',
                 'constraint' => 100,
             ],
+
 
             'created_at' => [
                 'type'       => 'DATETIME',
