@@ -58,10 +58,12 @@ class Transaksi extends ResourceController
     {
         $data1 = [
             //ini untuk data tbl_transaksi    
-            'kwitansi' => $this->request->getVar('kwitansi'),
+            'no_bundle' => $this->request->getVar('no_bundle'),
             'tanggal' => $this->request->getVar('tanggal'),
             'deskripsi' => $this->request->getVar('deskripsi'),
-            'ketjurnal' => $this->request->getVar('ketjurnal'),
+            'debit' => $this->request->getVar('debit'),
+            'kredit' => $this->request->getVar('kredit'),
+            'pic' => $this->request->getVar('PIC'),
         ];
         $this->db->table('tbl_transaksi')->insert($data1);
         return redirect()->to(site_url('transaksi'))->with('Success', 'Data Berhasil Disimpan');

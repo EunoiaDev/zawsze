@@ -33,7 +33,7 @@
         <!-- dinamis tempat data -->
         <div class="card">
             <div class="card-header">
-                <h4>Daftar Akun</h4>
+                <h4>Jurnal Transaksi Kas Operasional</h4>
             </div>
             <div class="card-body p-4">
                 <div class="table-responsive">
@@ -41,10 +41,12 @@
                         <thead>
                             <tr>
                                 <th>No</th>
-                                <th>Kwitansi</th>
+                                <th>No Bundle</th>
                                 <th>Tanggal</th>
                                 <th>Deskripsi</th>
-                                <th>Keterangan Jurnal</th>
+                                <th>Debit</th>
+                                <th>Kredit</th>
+                                <th>PIC</th>
                                 <th>Aksi</th>
                             </tr>
                         </thead>
@@ -53,10 +55,12 @@
 
                                 <tr>
                                     <td><?= $key + 1 ?></td>
-                                    <td><?= $value->kwitansi ?></td>
+                                    <td><?= $value->no_bundle ?></td>
                                     <td><?= $value->tanggal ?></td>
                                     <td><?= $value->deskripsi ?></td>
-                                    <td><?= $value->ketjurnal ?></td>
+                                    <td><?= $value->debit ?></td>
+                                    <td><?= $value->kredit ?></td>
+                                    <td><?= $value->PIC ?></td>
                                     <td class=" text-center" style="width: 21%;">
                                         <!-- <a href="" class="btn btn-warning"><i class="fas fa-pencil-alt"></i> Edit</a>
                                         <a href="" class="btn btn-danger"><i class="fas fa-trash-alt"></i>Hapus</a> -->
