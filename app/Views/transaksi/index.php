@@ -8,7 +8,7 @@
 <section class="section">
     <div class="section-header">
         <!-- <h1>Selamat Datang, Reza!</h1> -->
-        <a href="<?= site_url('transaksi/new') ?>" class="btn btn-primary">Add New</a>
+        <a href="<?= site_url('transaksi/new') ?>" class="btn btn-primary">Tambah Transaksi</a>
     </div>
 
     <?php if (session()->getFlashdata('success')) : ?>

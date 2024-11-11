@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Models\ModelAktiva;
 use App\Models\ModelTransaksi;
 use CodeIgniter\HTTP\ResponseInterface;
 use CodeIgniter\RESTful\ResourceController;
@@ -65,7 +66,18 @@ class Transaksi extends ResourceController
             'kredit' => $this->request->getVar('kredit'),
             'pic' => $this->request->getVar('PIC'),
         ];
+        // simpan data ke tbl_transaksi
         $this->db->table('tbl_transaksi')->insert($data1);
+
+        // kita ambil dari id_transaksi
+        $id_transaksi = $this->objTransaksi->InsertID();
+        $kode_akun = $this->request->getVar('kode_akun');
+        $nama_akun = $this->request->getVar('nama_akun');
+        $debit = $this->request->getVar('debit');
+        $keterangan = $this->request->getVar('keterangan');
+
+
+
         return redirect()->to(site_url('transaksi'))->with('Success', 'Data Berhasil Disimpan');
     }
 
@@ -103,5 +115,12 @@ class Transaksi extends ResourceController
     public function delete($id = null)
     {
         //
+    }
+
+    public function akunaktiva()
+    {
+        $aktiva = model(ModelAktiva::class);
+        $result = $aktiva->findAll();
+        return $this->response->setJSON($result);
     }
 }
