@@ -97,12 +97,14 @@ $(document).ready(function(){
     function FormSelectAkun(Nomor) {
         var output = [];
         output.push('<option value="">Pilih Kode Akun</option>');
-        // ambil datanya disini
-        $.getJSON('/transaksi/akun', function(data) {
+        
+        // Panggil data dari endpoint CodeIgniter
+        $.getJSON('/transaksi/akunaktiva', function(data) {
             $.each(data, function(key, value) {
                 output.push('<option value="' + value.kode_akun + '" data-nama-akun="' + value.nama_akun + '">' + 
-                           value.kode_akun + '</option>');
+                            value.kode_akun + '</option>');
             });
             $('#kode_akun' + Nomor).html(output.join(''));
         });
-    }    
+    }
+       
