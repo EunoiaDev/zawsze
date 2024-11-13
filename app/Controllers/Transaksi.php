@@ -4,11 +4,12 @@ namespace App\Controllers;
 
 use App\Models\ModelAktiva;
 use App\Models\ModelTransaksi;
-use CodeIgniter\HTTP\ResponseInterface;
-use CodeIgniter\RESTful\ResourceController;
+use CodeIgniter\API\ResponseTrait;
 
-class Transaksi extends ResourceController
+class Transaksi extends BaseController
 {
+    use ResponseTrait;
+
     protected $db;
     protected $objTransaksi;
 
@@ -26,7 +27,6 @@ class Transaksi extends ResourceController
 
     public function new()
     {
-        // Tampilkan form input transaksi baru
         return view('transaksi/new');
     }
 
@@ -43,7 +43,7 @@ class Transaksi extends ResourceController
 
         $this->db->table('tbl_transaksi')->insert($data1);
 
-        $id_transaksi = $this->objTransaksi->InsertID();
+        $id_transaksi = $this->objTransaksi->insertID();
         $kode_akun = $this->request->getVar('kode_akun');
         $nama_akun = $this->request->getVar('nama_akun');
         $debit = $this->request->getVar('debit');
@@ -59,8 +59,3 @@ class Transaksi extends ResourceController
         return $this->response->setJSON($result);
     }
 }
-
-// public function show($id = null)
-// {
-//     //
-// }

@@ -35,9 +35,10 @@ $(document).ready(function(){
         var Baris = '<tr>';
         Baris += '<td class="text-center">' + Nomor + '</td>';
         Baris += '<td>';
-        Baris += '<select class="form-control" name="kode_akun[]" id="kode_akun' + Nomor + '" required>';
+        Baris += '<select class="form-control" name="nama_akun[]" id="nama_akun' + Nomor + '" required>';
+        Baris += '</select>';
         Baris += '</td>';
-        Baris += '<td class="nama-akun">'; // Cell untuk nama akun yang akan diisi otomatis
+        Baris += '<td class="kode-akun">'; // Cell untuk kode akun yang akan diisi otomatis
         Baris += '</td>';
         Baris += '<td>';
         Baris += '<input type="number" name="debit[]" class="form-control debit" placeholder="Debit..." required>';
@@ -60,11 +61,11 @@ $(document).ready(function(){
     
         FormSelectAkun(Nomor);
     
-        // Event listener untuk update nama akun saat kode akun dipilih
-        $('#kode_akun' + Nomor).change(function() {
+        // Event listener untuk update kode akun saat nama akun dipilih
+        $('#nama_akun' + Nomor).change(function() {
             var selectedOption = $(this).find('option:selected');
-            var namaAkun = selectedOption.data('nama-akun');
-            $(this).closest('tr').find('.nama-akun').text(namaAkun);
+            var kodeAkun = selectedOption.data('kode-akun');
+            $(this).closest('tr').find('.kode-akun').text(kodeAkun);
         });
     }
     
@@ -89,22 +90,23 @@ $(document).ready(function(){
         $(this).closest('tr').remove();
         $('#tableLoop tbody tr').each(function() {
             $(this).find('td:first-child').html(Nomor);
-            $(this).find('select[id^="kode_akun"]').attr('id', 'kode_akun' + Nomor);
+            $(this).find('select[id^="nama_akun"]').attr('id', 'nama_akun' + Nomor);
             Nomor++;
         });
     });
     
     function FormSelectAkun(Nomor) {
         var output = [];
-        output.push('<option value="">Pilih Kode Akun</option>');
+        output.push('<option value="">Pilih Nama Akun</option>');
         
         // Panggil data dari endpoint CodeIgniter
         $.getJSON('/transaksi/akunaktiva', function(data) {
             $.each(data, function(key, value) {
-                output.push('<option value="' + value.kode_akun + '" data-nama-akun="' + value.nama_akun + '">' + 
-                            value.kode_akun + '</option>');
+                output.push('<option value="' + value.nama_akun + '" data-kode-akun="' + value.kode_akun + '">' + 
+                            value.nama_akun + '</option>');
             });
-            $('#kode_akun' + Nomor).html(output.join(''));
+            $('#nama_akun' + Nomor).html(output.join(''));
         });
     }
+    
        

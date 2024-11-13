@@ -39,8 +39,8 @@
                             <thead>
                                 <tr>
                                     <th>No</th>
-                                    <th>Kode Akun</th>
                                     <th>Nama Akun</th>
+                                    <th>Kode Akun</th>
                                     <th>Debit</th>
                                     <th>Kredit</th>
                                     <th>Keterangan</th>
